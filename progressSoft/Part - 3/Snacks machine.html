@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>ProgressSoft Snacks Machine</title>
+</head>
+<body class ="bg-light py-3">
+
+    <section id="vending-machine" class="bg-dark py-2 rounded" style="display: grid; grid-template-columns: 1fr; max-width: 45vw; margin: auto;">
+        <h1 class="my-1 text-info text-center" style="font-size: 3vw;">ProgressSoft Snacks</h1>
+
+        <div style="display: grid; grid-template-columns: 4fr 1fr;">
+<div class="bg-dark p-3" style="display: grid; grid-template-columns: 2fr 1fr; grid-gap: 5vh; border-radius: 10px; min-height: 70vh; max-width: 45vw;">
+    
+        <div class="bg-light text-center" style="display: grid; grid-template-rows: 2;">
+            <h6>Soda</h6>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: center; justify-items: center;">
+        <div class="bg-primary" style="min-width: 3vw; min-height: 6vh; border-radius: 5px;">Pepsi</div>
+        <div class="bg-success" style="min-width: 3vw; min-height: 6vh; border-radius: 5px;">7'UP</div>
+        <div class="bg-warning" style="min-width: 3vw; min-height: 6vh; border-radius: 5px;">M</div>
+        
+
+    </div>
+    </div>
+
+        <div class="bg-light text-center" style="min-width: 10vw; min-height: 12vh;">Money inside the machine:<br>   0 JD</div>
+
+        <div class="bg-light text-center" style=" display: grid; grid-template-rows: 2;">
+            <h6>Chocolate</h6>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: center; justify-items: center;">
+                <div class="text-light" style="min-width: 3vw; min-height: 6vh; border-radius: 5px; background-color: hsl(0, 59%, 41%);">G</div>
+                <div class="bg-dark text-light" style="min-width: 3vw; min-height: 6vh; border-radius: 5px;">M</div>
+                <div class="bg-warning" style="min-width: 3vw; min-height: 6vh; border-radius: 5px;">T</div>
+                
+        
+            </div>
+
+        </div>
+        <div class="bg-light text-center" style="min-width: 10vw; min-height: 12vh;">Money in transaction:<br>  0 JD</div>
+
+        <div class="bg-light text-center" style=" display: grid; grid-template-rows: 2;">
+            <h6>gums</h6>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: center; justify-items: center;">
+        <div class="bg-primary" style="min-width: 3vw; min-height: 6vh; border-radius: 5px;">Extra</div>
+        <div class="bg-success" style="min-width: 3vw; min-height: 6vh; border-radius: 5px;">Excel</div>
+        <div class="bg-danger" style="min-width: 3vw; min-height: 6vh; border-radius: 5px;">Bub</div>
+        
+
+    </div>
+    </div>
+
+        
+        <div class="bg-light text-center" style="min-width: 10vw; min-height: 12vh;">Change:<br>    0 JD</div>
+
+        <div class="bg-light text-center" style=" display: grid; grid-template-rows: 2;">
+            <h6>Chips</h6>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: center; justify-items: center;">
+        <div class="bg-warning" style="min-width: 3vw; min-height: 6vh; border-radius: 5px;">Lays</div>
+        <div class="bg-dark text-light" style="min-width: 3vw; min-height: 6vh; border-radius: 5px;">Dor</div>
+        <div class="bg-secondary" style="min-width: 3vw; min-height: 6vh; border-radius: 5px;">Mr.C</div>
+        
+
+    </div>
+    </div>
+
+    <div class="bg-light text-center p-1" style=" display: grid; grid-template-rows: 3; justify-items: center; grid-gap: 1vh;">
+        <h6>Insert Money</h6>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; align-items: center; justify-items: center;">
+    <div class="bg-dark p-1" style="min-width: 4vw; min-height: 2vh; border-radius: 50%;"><div class="bg-white" style="width: 4vw; height: 0.75vh; border-radius: 50%;"></div></div>
+    <div class="bg-dark p-1 text-center" style="min-width: 3vw; min-height: 4vh; border-radius: 50%;"><div class="bg-white" style="width: 0.25vw; height: 3vh; border-radius: 50%; margin: auto;"></div></div>
+
+</div>
+<button class="btn btn-danger w-50" style="align-self: center;">Buy</button>
+</div>
+       
+</div>
+
+<div style="display: grid; grid-template-columns: 1fr; justify-self: center; row-gap: 1vh;">
+    <button class="btn btn-secondary h-50 my-3">0.25 JD</button>
+    <button class="btn btn-secondary h-50 my-3">0.5 JD</button>
+    <button class="btn btn-success h-50 my-3">1 JD</button>
+    <button class="btn btn-danger h-50 my-3">5 JD</button>
+    <button class="btn btn-info h-50 my-3">10 JD</button>
+    <button class="btn btn-danger h-50 my-3">Cancel</button>
+</div>
+
+</div>
+<div class="p-1 mx-4" style="border: 2px solid #777;">
+<div class="bg-secondary" style="border-radius: 5px; min-height: 15vh;transform-origin: 100%;transform-origin: top; transform: rotateX(20deg);">
+    <h3 class="text-center text-dark pt-3" style="transform: rotateX(20deg); transform-origin: top">Enjoy Your Snack<br><i class="fas fa-arrow-down"></i></h3>
+</div>
+</div>
+
+</section>    
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/@popperjs/core@2"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<script src="https://use.fontawesome.com/13f043e095.js"></script>
+</body>
+</html>
