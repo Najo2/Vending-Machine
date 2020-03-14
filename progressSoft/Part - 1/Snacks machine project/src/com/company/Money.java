@@ -3,6 +3,7 @@ package com.company;
 import java.util.Scanner;
 
 public class Money {
+    // Supported coins decleration
     final static double ZERO = 0.0;
     final static double QUARTER_DINAR = 0.25;
     final static double HALF_DINAR = 0.5;
@@ -12,6 +13,7 @@ public class Money {
 
     static double totalMoneyInMachine = 0;
 
+    // Each category price
     static double sodaPrice = HALF_DINAR - 0.15;
     static double chocoPrice = HALF_DINAR;
     static double gumPrice = HALF_DINAR - 0.15;
@@ -19,12 +21,14 @@ public class Money {
 
      private double customerChange = 0;
 
+    // Getting the total amount of money inserted
     double insertMoney(){
         System.out.println("Please insert one coin at a time; the supported coins are 0.25 JD, 0.5 JD, 1 JD, 5 JDs and 10 JDs.\nPress 0 to finish adding process...");
         double total = loopInsertion();
         return total;
     }
 
+    // The process of continuing inserting money in the machine until the customer stops
     double loopInsertion(){
         double total = 0;
         Scanner str = new Scanner(System.in);
@@ -39,6 +43,7 @@ public class Money {
         return total;
     }
 
+    // Checking the category that has been chosen by the customer, and check the total amount of money inserted in the machine
     void checkChoice(int choice){
         double total;
         while (true){
@@ -62,6 +67,7 @@ public class Money {
 
     }
 
+    // Comparing the price of the snack with a total amount paid
     void priceCheck(double paid, double price){
         if(paid >= price){
             customerChange = paid - price;
