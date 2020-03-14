@@ -8,13 +8,9 @@ public class SnackMachine {
 
     static Money money = new Money();
 
+    // Machine startup with zero JD inside
     static void snackWithValueZero(){
         System.out.println("Amount of money inside the machine is " + money.totalMoneyInMachine + " JD");
     }
 
-    void cancel(int x){
-        System.out.println("Thank you for coming by... :) :)");
-        if(x == 0)
-            exit(0);
-    }
 }
