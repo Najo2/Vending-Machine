@@ -3,6 +3,7 @@ package com.company;
 import java.util.Scanner;
 
 public class Snack {
+    // The snacks of each category
     String[] soda = {"Pepsi", "7'Up", "Merinda"};
     String[] choco = {"Galaxy", "Mars", "Twix"};
     String[] gum = {"Extra", "Excellent", "Bubble Gum"};
@@ -12,7 +13,7 @@ public class Snack {
     SnackType snackType = new SnackType();
 
 
-
+    // Displaying The snacks list of the chosen category and return the customer choice from the list
     int printCategoryWithPrice(int category){
         Scanner cat = new Scanner(System.in);
 
