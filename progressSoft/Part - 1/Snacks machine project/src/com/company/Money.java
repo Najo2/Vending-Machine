@@ -28,7 +28,7 @@ public class Money {
         return total;
     }
 
-    // The process of continuing inserting money in the machine until the customer stops
+    // The process of continuing the insertion of money in the machine until the customer stops
     double loopInsertion(){
         double total = 0;
         Scanner str = new Scanner(System.in);
