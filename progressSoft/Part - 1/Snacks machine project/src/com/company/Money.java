@@ -1,9 +1,11 @@
 package com.company;
 
+import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class Money {
-    // Supported coins decleration
+    // Supported coins deceleration
     final static double ZERO = 0.0;
     final static double QUARTER_DINAR = 0.25;
     final static double HALF_DINAR = 0.5;
@@ -13,7 +15,6 @@ public class Money {
 
     static double totalMoneyInMachine = 0;
 
-    // Each category price
     static double sodaPrice = HALF_DINAR - 0.15;
     static double chocoPrice = HALF_DINAR;
     static double gumPrice = HALF_DINAR - 0.15;
@@ -21,21 +22,31 @@ public class Money {
 
      private double customerChange = 0;
 
+     SnackType snackType = new SnackType();
+
     // Getting the total amount of money inserted
     double insertMoney(){
         System.out.println("Please insert one coin at a time; the supported coins are 0.25 JD, 0.5 JD, 1 JD, 5 JDs and 10 JDs.\nPress 0 to finish adding process...");
-        double total = loopInsertion();
+        double total = MoneyInTransaction();
         return total;
     }
 
     // The process of continuing the insertion of money in the machine until the customer stops
-    double loopInsertion(){
+    double MoneyInTransaction(){
         double total = 0;
         Scanner str = new Scanner(System.in);
+        ArrayList unsupportedCoin = new ArrayList(Arrays.asList(0.01, 0.05, 0.10, 20.0, 50.0));
 
         while (true){
             System.out.println("Total amount inserted: " + total + " JD");
-            double insertedMoney = Double.parseDouble(str.next());
+            double insertedMoney;
+            while (true) {
+                insertedMoney = Double.parseDouble(str.next());
+                if(unsupportedCoin.indexOf(insertedMoney) >= 0 || insertedMoney < 0)
+                System.out.println("please insert a supported coin; the supported coins are 0.25 JD, 0.5 JD, 1 JD, 5 JDs and 10 JDs.");
+                else
+                    break;
+            }
             total += insertedMoney;
             if(insertedMoney == 0)
                 break;
@@ -44,7 +55,7 @@ public class Money {
     }
 
     // Checking the category that has been chosen by the customer, and check the total amount of money inserted in the machine
-    void checkChoice(int choice){
+    void checkChoiceAndPrice(int choice){
         double total;
         while (true){
             total = insertMoney();
@@ -53,17 +64,23 @@ public class Money {
             }else
                 break;
         }
-        if(choice == 1)
+        if(choice == 1){
             priceCheck(total, sodaPrice);
+            snackType.sodaQuantity--;
+        }
 
-        else if(choice == 2)
+        else if(choice == 2) {
             priceCheck(total, chocoPrice);
-
-        else if (choice == 3)
+            snackType.sodaQuantity--;
+        }
+        else if (choice == 3) {
             priceCheck(total, gumPrice);
-
-        else
+            snackType.sodaQuantity--;
+        }
+        else {
             priceCheck(total, chipsPrice);
+            snackType.sodaQuantity--;
+        }
 
     }
 
@@ -75,12 +92,14 @@ public class Money {
             System.out.println("The snack price: " + price + " JD");
             System.out.println("The change is: " + customerChange + " JD\n");
             totalMoneyInMachine+= price;
-            System.out.println("The snack has been dropped, enjoy it!");
+            System.out.println("The snack has been dropped, enjoy it!\n");
         }
         else {
             System.out.println("Insufficient fund, please try again with enough amount of money");
             System.out.println("Amount inserted: " + paid + " JD");
             System.out.println("Amount required: " + price + " JD");
+            System.exit(0);
         }
+
     }
 }
