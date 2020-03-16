@@ -9,18 +9,19 @@ public class Main {
         Snack snack = new Snack();
         SnackType snackType = new SnackType();
 
-        sm.snackWithValueZero();
+        while (true)
+        {
+            sm.snackWithValueZero();
 
         int category = snackType.chooseSnackType();
 
+        snackType.checkQuantity(category);
+
         int choice = snack.printCategoryWithPrice(category);
 
-        money.checkChoice(category);
+        money.checkChoiceAndPrice(category);
+        }
 
     }
 
 }
-
-
-
-
